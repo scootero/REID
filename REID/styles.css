@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+
+}
+
+nav {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sections-wrapper section {
+    /* position: relative; */
+    height: 800px;
+    border-top: black 3px solid;
+
+    /* background-color: orange; */
+}
+
+.section-1 {
+    position: relative;
+    height: 400px;
+    /* justify-content: center; */
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+
+}
+
+.hero-img {
+    max-width: 400px;
+    background-color: yellow;
+
+}
+
+.mini-map {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+}
+
+.mini-map img {
+    border: 1px black solid;
+    position: absolute;
+
+}
+
+.hero-circle {
+    text-align: center;
+}
+
+.line-map {
+    /* transform: translateY(200px); */
+    z-index: 1;
+}
+
+.circle-map {
+    /* transform: translateY(100px); */
+}
