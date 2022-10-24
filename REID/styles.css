@@ -1,11 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+
+:root {
+  --main-bg-color-white: whitesmoke;
+  --main-color-red: #e22e00;
+}
+
 body {
   margin: 0;
+  font-family: "Wire One", sans-serif;
 }
 
 nav {
-  height: 40px;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  background-color: var(--main-bg-color-white);
+}
+nav div {
+  margin: 10px 30px;
 }
 
 .sections-wrapper section {
@@ -15,124 +30,117 @@ nav {
 }
 
 .section-1 {
-  background-color: whitesmoke;
-  /* background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(245, 124, 13, 1) 20%,
-    rgba(213, 55, 45, 1) 64%,
-    rgba(76, 70, 200, 1) 100%
-  ); */
+  background-color: var(--main-bg-color-white);
 
-  height: 2000px;
-  width: 100px;
+  border: 1px black solid;
+
   margin-left: auto;
   margin-right: auto;
 }
 
 .hero-section {
-  max-width: 800px;
-  margin: auto;
-  height: 800px;
-  position: relative;
-  text-align: center;
-  /* margin-top: 180px; */
-  padding-top: 200px;
-  /* background-color: green; */
+  height: auto;
+  margin-top: 180px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
-  /* margin-top: 150px; */
+/* .hero-house-wrapper {
+  position: relative;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  height: auto;
+} */
+
+/* #line-house {
+  width: 95%;
+  height: auto;
+} */
+/* #house-path {
+  stroke-dasharray: 7350px;
+  stroke-dashoffset: 7350px;
+  animation: move 1.8s 1.5s linear;
+  animation-fill-mode: forwards;
+} */
+
+.map-circle-wrapper {
+  /* width: 80%; */
+  max-width: 600px;
+  height: auto;
+  position: absolute;
+  text-align: center;
 }
 
 /* MINI MAP & SVG */
 .mini-map {
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  transform: translateY(160px);
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* transform: translateY(160px); */
+  position: absolute;
   z-index: 1;
 }
 
 .mini-map img {
   position: absolute;
-  width: 70%;
+  width: 60%;
 }
 
 .line-map {
   z-index: 2;
-  animation: line-map-slide 3s forwards;
+  margin-top: -95px;
+  /* animation: line-map-slide 3s forwards; */
 }
 
 .circle-map {
   z-index: 1;
-  animation: circle-map-slide 3s forwards;
+  margin-top: -20px;
+  /* animation: circle-map-slide 3s forwards; */
 }
 .zillow-map {
-  animation: zillow-map-slide 3s forwards;
+  margin-top: 30px;
+  /* animation: zillow-map-slide 3s forwards; */
 }
+
 .hero-circle {
-  position: relative;
-  margin: auto;
-  animation: hero-circle-rotate 3s;
-}
-.line-house-drawing {
-  display: flex;
-  justify-content: center;
-}
-.line-house-drawing img {
-  width: 90%;
-  position: absolute;
-  margin-top: 150px;
+  text-align: center;
+  width: 80%;
+  /* opacity: 0; */
+  /* animation: hero-circle-rotate 2.5s 0.3s forwards ease-out; */
 }
 
-.line-house-drawing {
-  /* stroke: #000; */
-  /* stroke-width: 4px; */
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 4000;
-  /* fill: transparent; */
-  /* fill: transparent; */
-  /* animation: dash 5s linear alternate infinite; */
-  animation: drawLine 4s linear forwards;
-}
+/** SECTION 2  */
 
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
+.icon {
+  /* width: 500px; */
 }
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes hero-circle-rotate {
   0% {
-    transform: translateY(320px) rotate(-100deg);
+    opacity: 0;
+    transform: rotate(-80deg);
   }
 
   100% {
-    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    transform: rotate(0deg);
   }
-}
-
-.hero-circle img {
-  width: 80%;
-  transform-origin: 0%;
 }
 
 @keyframes line-map-slide {
   0% {
-    opacity: 20%;
+    /* opacity: 20%; */
     transform: translateY(-200px);
   }
   100% {
     opacity: 100%;
-    transform: translateY(-80px);
+    transform: translateY(0px);
   }
 }
 
@@ -143,18 +151,18 @@ nav {
   }
   100% {
     opacity: 100%;
-    transform: translateY(-50px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes zillow-map-slide {
   0% {
     opacity: 20%;
-    transform: translateY(150px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 100%;
-    transform: translateY(-30px);
+    transform: translateY(0px);
   }
 }
 
@@ -173,5 +181,17 @@ nav {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
   }
 }
